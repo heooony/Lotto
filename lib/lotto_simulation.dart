@@ -1,11 +1,11 @@
 import 'dart:math';
 
 class LottoSimulation {
-  static List<int> number = List<int>();
-  static int newNumber;
-  static bool isCorrect = true;
+  List<int> number = List<int>();
+  int newNumber;
+  bool isCorrect = true;
 
-  static void simulator() {
+  LottoSimulation() {
     while (true) {
       if (number.length == 6) break;
       newNumber = Random().nextInt(45) + 1;
@@ -31,5 +31,6 @@ class LottoSimulation {
       if (isCorrect == true) number.add(newNumber);
       isCorrect = true;
     }
+    print(number);
   }
 }
