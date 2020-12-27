@@ -30,6 +30,7 @@ class _ResultScreenState extends State<ResultScreen> {
               children: [
                 for (int i = 0; i < widget.times; i++)
                   Card(
+                    elevation: 10.0,
                     color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -37,13 +38,14 @@ class _ResultScreenState extends State<ResultScreen> {
                     ),
                   ),
                 Card(
+                  elevation: 10.0,
                   child: FlatButton(
                       color: Colors.white,
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       child: Text(
-                        '다시 생성',
+                        '다시 생성하세요',
                         style: TextStyle(fontFamily: 'Nixgone', fontSize: 30.0),
                       )),
                 )
@@ -124,7 +126,17 @@ class LottoNumber extends StatelessWidget {
       child: Text(
         '${lotto.number[number]}',
         style: TextStyle(
-            color: Colors.white, fontSize: 20.0, fontFamily: 'Nixgone'),
+            shadows: [
+              Shadow(
+                blurRadius: 20.0,
+                color: Colors.black,
+                offset: Offset(0.0, 0.0),
+              ),
+            ],
+            color: Colors.white,
+            fontSize: 20.0,
+            fontFamily: 'Nixgone',
+            fontWeight: FontWeight.bold),
       ),
       backgroundColor: (buildColor() != null) ? buildColor() : Colors.black,
       radius: 20.0,

@@ -38,7 +38,8 @@ class _MyAppState extends State<MyApp> {
                     },
                     child: Icon(
                       Icons.arrow_circle_down_sharp,
-                      size: 30.0,
+                      color: Color(color1),
+                      size: 50.0,
                     ),
                   ),
                   SizedBox(
@@ -46,7 +47,10 @@ class _MyAppState extends State<MyApp> {
                   ),
                   Text(
                     makeTry.toString(),
-                    style: TextStyle(fontSize: 30.0, fontFamily: 'Nixgone'),
+                    style: TextStyle(
+                        fontSize: 50.0,
+                        fontFamily: 'Nixgone',
+                        color: Colors.white),
                   ),
                   SizedBox(
                     width: 10.0,
@@ -59,7 +63,8 @@ class _MyAppState extends State<MyApp> {
                     },
                     child: Icon(
                       Icons.arrow_circle_up_sharp,
-                      size: 30.0,
+                      color: Color(color1),
+                      size: 50.0,
                     ),
                   )
                 ],
@@ -68,23 +73,27 @@ class _MyAppState extends State<MyApp> {
             SizedBox(
               height: 20.0,
             ),
-            FlatButton(
-              shape: CircleBorder(),
-              padding: EdgeInsets.all(25.0),
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) {
-                  return ResultScreen(makeTry);
-                }));
-              },
-              color: Colors.white,
-              child: Text(
-                '생성',
-                style: TextStyle(
-                    fontFamily: 'Nixgone',
-                    fontSize: 30.0,
-                    color: Color(color2)),
-              ),
+            Stack(
+              children: [
+                FlatButton(
+                  shape: CircleBorder(),
+                  padding: EdgeInsets.all(25.0),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return ResultScreen(makeTry);
+                    }));
+                  },
+                  color: Colors.white,
+                  child: Text(
+                    '생성',
+                    style: TextStyle(
+                        fontFamily: 'Nixgone',
+                        fontSize: 30.0,
+                        color: Color(color2)),
+                  ),
+                ),
+              ],
             ),
           ],
         )),
